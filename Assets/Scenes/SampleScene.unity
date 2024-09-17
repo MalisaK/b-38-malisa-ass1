@@ -246,8 +246,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59cc271b0c9836844a44dcf5322c2b70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  captainAmerica: {fileID: 0}
-  ironMan: {fileID: 0}
+  captainAmerica: {fileID: 1436428277}
+  ironMan: {fileID: 1705413850}
 --- !u!4 &927928243
 Transform:
   m_ObjectHideFlags: 0

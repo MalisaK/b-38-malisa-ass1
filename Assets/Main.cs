@@ -4,22 +4,33 @@ using UnityEngine;
 
 public class Main : MonoBehaviour
 {
+    //set cap name,hp,suitcolor
+    CaptainAmerica captainAmerica = new CaptainAmerica("Steve", 100, "Green");
+    //set ironman name,hp,suitcolor
+    IronMan ironMan = new IronMan("Tony", 100, "Red");
     void Start()
     {
+        ironMan.Name = ("pp");
         Debug.Log("*** Superheros fight!!!!");
-        CaptainAmerica captainAmerica = new CaptainAmerica("Steve", 100, "Green");
-        IronMan ironMan = new IronMan("Tony", 100, "Red");
-        Debug.Log($"IronMan name: {ironMan.IronName}, Hp: {ironMan.IronHp}, Suit Color: {ironMan.IronSuitColor}");
-        Debug.Log($"CaptainAmerica name: {captainAmerica.CapName}, Hp: {captainAmerica.CapHp}, Suit Color: {captainAmerica.CapSuitColor}");
-        for (int i = 0; i < 5; i++)
+        Debug.Log($"IronMan name: {ironMan.Name}, Hp: {ironMan.Hp}, Suit Color: {ironMan.SuitColor}");
+        Debug.Log($"CaptainAmerica name: {captainAmerica.Name}, Hp: {captainAmerica.Hp}, Suit Color: {captainAmerica.SuitColor}");
+        ironMan.UpdateArmor(5.25f);
+        captainAmerica.UpdateArmor(5.5f);
+    }
+    private void Update()
+    {
+        //fight process
+        if (ironMan.IsDead() || captainAmerica.IsDead())
         {
-            ironMan.ShootLaser();
-            int randomvalue = Random.Range(10, 21);
-            captainAmerica.TakeDamage(randomvalue);
-            captainAmerica.ThrowShield();
-            randomvalue = Random.Range(10, 21);
-            ironMan.TakeDamage(randomvalue);
+            return;
         }
-
+        ironMan.ShootLaser();
+        //random damage ironman
+        int randomvalue = Random.Range(10, 21);
+        captainAmerica.TakeDamage(randomvalue);
+        captainAmerica.ThrowShield();
+        //random damage cap
+        randomvalue = Random.Range(10, 21);
+        ironMan.TakeDamage(randomvalue);
     }
 }

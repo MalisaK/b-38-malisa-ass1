@@ -5,9 +5,11 @@ using UnityEngine;
 public class Main : MonoBehaviour
 {
     //set cap name,hp,suitcolor
-    CaptainAmerica captainAmerica = new CaptainAmerica("Steve", 100, "Green");
+    public CaptainAmerica captainAmerica;
+
     //set ironman name,hp,suitcolor
-    IronMan ironMan = new IronMan("Tony", 100, "Red");
+    public IronMan ironMan;
+
     void Start()
     {
         ironMan.Name = ("pp");

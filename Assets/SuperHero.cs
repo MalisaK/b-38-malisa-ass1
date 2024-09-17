@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SuperHero
+public class SuperHero : MonoBehaviour
 {
     //Attributes
     protected string name;
